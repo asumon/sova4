@@ -1,0 +1,28 @@
+﻿<div *ngIf="post">
+    <div class="jumbotron">
+
+        <h3 class="mt-0 text-nowrap media-heading">{{post.title}}</h3>
+        <div class="text-muted">{{post.creationDate | date  }}</div>
+
+    </div>
+
+    <div class="media">
+        <div class="media-left text-center">
+            <img class="mr-3" src="emoj.jpg" alt="Generic placeholder image">
+            <div class="text-info">{{ post.userName }}</div>
+
+             <h1 class="alert-success">{{post.score}}</h1>
+        </div>
+
+
+        <div class="media-body">
+           
+            <div [innerHtml]="post.body"></div>
+        </div>
+
+
+
+    </div>
+
+
+</div>
