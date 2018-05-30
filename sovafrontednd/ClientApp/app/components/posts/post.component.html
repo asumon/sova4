@@ -1,22 +1,25 @@
-﻿<div *ngIf="post">
-    <div class="jumbotron">
+﻿
+<div class="well well-lg">
+    <h1>Sova App</h1>
+    <p class="text-muted">Welcome to your new single-page application</p>
 
-        <h3 class="mt-0 text-nowrap media-heading">{{post.title}}</h3>
-        <div class="text-muted">{{post.creationDate | date  }}</div>
-
-    </div>
+</div>
+<div *ngIf="post">
 
     <div class="media">
         <div class="media-left text-center">
-            <img class="mr-3" src="emoj.jpg" alt="Generic placeholder image">
+
+            <img class="mr-3 img-responsive" src="emoj.jpg" alt="Generic placeholder image">
             <div class="text-info">{{ post.userName }}</div>
 
-             <h1 class="alert-success">{{post.score}}</h1>
+            <h1 class="alert-success">{{post.score}}</h1>
         </div>
 
 
         <div class="media-body">
-           
+            <h3 class="">{{post.title}}</h3>
+            <div class="text-muted">{{post.creationDate | date  }}</div>
+
             <div [innerHtml]="post.body"></div>
         </div>
 
