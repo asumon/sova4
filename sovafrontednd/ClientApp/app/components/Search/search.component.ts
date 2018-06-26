@@ -1,6 +1,7 @@
 import { Component, Inject } from '@angular/core';
 import { Http } from '@angular/http';
 import { PostService } from '../../../PostService';
+import { ActivatedRoute, Params } from '@angular/router';
 
 @Component({
     selector: 'Search',
@@ -8,15 +9,20 @@ import { PostService } from '../../../PostService';
 })
 export class SearchComponent {
     posts: any;
-    constructor(private postService: PostService) {
+    searchTerm: string;
+    constructor(private postService: PostService, private route: ActivatedRoute) {
 
     }
+    ngOnInit() {
+        this.route.params.subscribe((params: Params) => { this.searchTerm = params['term']; });
+        if (this.searchTerm) {
+            this.postService.getSearchPost(this.searchTerm).subscribe(result => {
+                this.posts = result;
 
-    searchQuery(search: any) {
-        this.posts = [];
-        this.postService.getSearchPost(search).subscribe(x => { this.posts = x; });
-
-
+            })
+        }
     }
+
+   
     
 }

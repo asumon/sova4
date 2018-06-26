@@ -34,6 +34,7 @@ import { PaginationComponent } from './components/pagination/paging.component';
             { path: 'post/:id', component: PostComponent },
             { path: 'user', component: UserComponent },
             { path: 'search', component: SearchComponent },
+            { path: 'search/:term', component: SearchComponent },
             { path: '**', redirectTo: 'home' }
         ])
     ]

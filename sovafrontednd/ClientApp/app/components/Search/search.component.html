@@ -3,7 +3,7 @@
     <div class="input-group input-group-lg">
         <input type="text" class="form-control" #search="ngModel" [(ngModel)]="searchTerm" placeholder="Search for..." required>
         <span class="input-group-btn">
-            <button class="btn btn-default" type="button" [disabled]="search.invalid" (click)="searchQuery(search.value)"><span class="glyphicon glyphicon-search"></span></button>
+            <a [routerLink]="['/search',search.value]" class="btn btn-default" type="button"  (click)="searchQuery(search.value)"><span class="glyphicon glyphicon-search"></span></a>
         </span>
     </div><!-- /input-group -->
 </div>

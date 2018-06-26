@@ -21,8 +21,7 @@ namespace SovaDataBase
         {
             base.OnConfiguring(optionsBuilder);
 
-            optionsBuilder.UseMySql(
-                "server=wt-220.ruc.dk;port=3306;raw3;uid=amhu;password=amhu_882;");
+            optionsBuilder.UseMySql("server=127.0.1;port=3306;database=stackoverflow;uid=root;password=root;");
         }
 
         public DbSet<Posttype> PostType { get; set; }
